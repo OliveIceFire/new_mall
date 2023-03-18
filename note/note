@@ -1,0 +1,10 @@
+create database if not EXISTS `mall`
+    default character set utf8
+    default collate utf8_general_ci;
+
+
+debug  跟开发相关的错误日志
+
+ObjectMapper 是fastJson 提供的工具  ObjectMapper.writeValueAsString(object);
+
+C:\Users\97921\logs
