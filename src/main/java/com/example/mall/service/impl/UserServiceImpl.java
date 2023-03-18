@@ -21,8 +21,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void register(String username, String password) throws MallException {
-        User user = userMapper.selectByName(username);
-        if (user!=null) {
+        User result = userMapper.selectByName(username);
+        if (result!=null) {
             throw new MallException(MallExceptionEnum.NAME_EXISTED);
         }
 
@@ -34,4 +34,7 @@ public class UserServiceImpl implements UserService {
             throw new MallException(MallExceptionEnum.INSERT_FAILED);
         }
     }
+
+
+
 }
