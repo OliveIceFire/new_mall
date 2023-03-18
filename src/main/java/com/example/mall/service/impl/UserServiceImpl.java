@@ -25,5 +25,13 @@ public class UserServiceImpl implements UserService {
         if (user!=null) {
             throw new MallException(MallExceptionEnum.NAME_EXISTED);
         }
+
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        int count = userMapper.insertSelective(user);
+        if (count == 0){
+            throw new MallException(MallExceptionEnum.INSERT_FAILED);
+        }
     }
 }
